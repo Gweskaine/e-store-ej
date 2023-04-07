@@ -15,9 +15,12 @@ function App() {
   }, [])
 
   const renderCategories = () => {
-    return results.map(c => 
-      <Category key={c.id} id={c.id} title={c.title}/>
-    );
+    const categories = [];
+    for (let i = 0; i<results.length; i++){      
+      categories.push(<Category key={results[i].id} id={results[i].id} title={results[i].title}/>) 
+    }
+    return categories;       
+    
   }
 
     return (
